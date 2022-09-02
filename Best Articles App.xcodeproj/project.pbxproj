@@ -13,9 +13,12 @@
 		7A7CE0A828C25AF100EB97F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A7CE0A728C25AF100EB97F7 /* Preview Assets.xcassets */; };
 		7A7CE0AA28C25AF100EB97F7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7CE0A928C25AF100EB97F7 /* Persistence.swift */; };
 		7A7CE0AD28C25AF100EB97F7 /* Best_Articles_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A7CE0AB28C25AF100EB97F7 /* Best_Articles_App.xcdatamodeld */; };
+		9891132F34BC6B7A40224223 /* Pods_Best_Articles_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A788EC7CD14D013A24D7C79 /* Pods_Best_Articles_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A788EC7CD14D013A24D7C79 /* Pods_Best_Articles_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Best_Articles_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ED47AADBD573F52B7C8D3FB /* Pods-Best Articles App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Best Articles App.debug.xcconfig"; path = "Target Support Files/Pods-Best Articles App/Pods-Best Articles App.debug.xcconfig"; sourceTree = "<group>"; };
 		7A7CE09D28C25AF000EB97F7 /* Best Articles App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Best Articles App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7CE0A028C25AF000EB97F7 /* Best_Articles_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Best_Articles_AppApp.swift; sourceTree = "<group>"; };
 		7A7CE0A228C25AF000EB97F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +26,7 @@
 		7A7CE0A728C25AF100EB97F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7A7CE0A928C25AF100EB97F7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		7A7CE0AC28C25AF100EB97F7 /* Best_Articles_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Best_Articles_App.xcdatamodel; sourceTree = "<group>"; };
+		9DFB40159BD182B5A9EA0232 /* Pods-Best Articles App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Best Articles App.release.xcconfig"; path = "Target Support Files/Pods-Best Articles App/Pods-Best Articles App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,17 +34,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9891132F34BC6B7A40224223 /* Pods_Best_Articles_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D74799E4B5EC02E28D84786 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A788EC7CD14D013A24D7C79 /* Pods_Best_Articles_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3BCE1705960F8B89C7FD636E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6ED47AADBD573F52B7C8D3FB /* Pods-Best Articles App.debug.xcconfig */,
+				9DFB40159BD182B5A9EA0232 /* Pods-Best Articles App.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7A7CE09428C25AF000EB97F7 = {
 			isa = PBXGroup;
 			children = (
 				7A7CE09F28C25AF000EB97F7 /* Best Articles App */,
 				7A7CE09E28C25AF000EB97F7 /* Products */,
+				3BCE1705960F8B89C7FD636E /* Pods */,
+				1D74799E4B5EC02E28D84786 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,10 +80,11 @@
 			isa = PBXGroup;
 			children = (
 				7A7CE0A028C25AF000EB97F7 /* Best_Articles_AppApp.swift */,
-				7A7CE0A228C25AF000EB97F7 /* ContentView.swift */,
+				7A7CE0B628C2606C00EB97F7 /* Views */,
+				7A7CE0B528C2605F00EB97F7 /* ViewModels */,
+				7A7CE0B428C2605900EB97F7 /* Models */,
+				7A7CE0B328C2605100EB97F7 /* Data */,
 				7A7CE0A428C25AF100EB97F7 /* Assets.xcassets */,
-				7A7CE0A928C25AF100EB97F7 /* Persistence.swift */,
-				7A7CE0AB28C25AF100EB97F7 /* Best_Articles_App.xcdatamodeld */,
 				7A7CE0A628C25AF100EB97F7 /* Preview Content */,
 			);
 			path = "Best Articles App";
@@ -73,6 +98,37 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		7A7CE0B328C2605100EB97F7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7A7CE0A928C25AF100EB97F7 /* Persistence.swift */,
+				7A7CE0AB28C25AF100EB97F7 /* Best_Articles_App.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7A7CE0B428C2605900EB97F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7A7CE0B528C2605F00EB97F7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7A7CE0B628C2606C00EB97F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A7CE0A228C25AF000EB97F7 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +136,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A7CE0B028C25AF100EB97F7 /* Build configuration list for PBXNativeTarget "Best Articles App" */;
 			buildPhases = (
+				9A9E00A90233D824C5B6CB6D /* [CP] Check Pods Manifest.lock */,
 				7A7CE09928C25AF000EB97F7 /* Sources */,
 				7A7CE09A28C25AF000EB97F7 /* Frameworks */,
 				7A7CE09B28C25AF000EB97F7 /* Resources */,
+				3A0AEC491DE8335D7773EDBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +195,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A0AEC491DE8335D7773EDBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Best Articles App/Pods-Best Articles App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Best Articles App/Pods-Best Articles App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Best Articles App/Pods-Best Articles App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A9E00A90233D824C5B6CB6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Best Articles App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7A7CE09928C25AF000EB97F7 /* Sources */ = {
@@ -269,6 +369,7 @@
 		};
 		7A7CE0B128C25AF100EB97F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ED47AADBD573F52B7C8D3FB /* Pods-Best Articles App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -298,6 +399,7 @@
 		};
 		7A7CE0B228C25AF100EB97F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DFB40159BD182B5A9EA0232 /* Pods-Best Articles App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
