@@ -14,6 +14,7 @@ struct Best_Articles_AppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ContentModel())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
