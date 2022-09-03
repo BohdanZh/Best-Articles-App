@@ -1,5 +1,5 @@
 //
-//  ArticleDetail.swift
+//  SavedArticleDetails.swift
 //  Best Articles App
 //
 //  Created by Bohdan Zhyzhchenko on 03.09.2022.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ArticleDetail: View {
+struct SavedArticleDetails: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var model: ContentModel
     
-    var article: Article
+    var article: ArticleSaved
     @Binding var selectedTab:Int
     
     var body: some View {
@@ -71,12 +71,12 @@ struct ArticleDetail: View {
                                 }
                             }
                             
-                            // Delete button
+                            // Save button
                             Button {
-                                selectedTab = Constants.savedTab
-                                model.saveArticle(article: article)
+                                model.deleteSavedAtricle(article: article)
+                                
                             } label: {
-                                ArticleBotton(buttonText: "Read later")
+                                ArticleBotton(buttonText: "Remove from Saved")
                             }
 
                             

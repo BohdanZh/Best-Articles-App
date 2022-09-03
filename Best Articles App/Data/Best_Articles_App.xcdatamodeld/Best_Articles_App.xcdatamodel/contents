@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ArticleSaved" representedClassName="ArticleSaved" syncable="YES">
+        <attribute name="abstract" optional="YES" attributeType="String"/>
+        <attribute name="adxKeywords" optional="YES" attributeType="String"/>
+        <attribute name="byLine" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="nytdSection" optional="YES" attributeType="String"/>
+        <attribute name="publishedDate" optional="YES" attributeType="String"/>
+        <attribute name="section" optional="YES" attributeType="String"/>
+        <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="updatedDate" optional="YES" attributeType="String"/>
+        <attribute name="uri" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
+        <element name="ArticleSaved" positionX="-63" positionY="-9" width="128" height="239"/>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
     </elements>
 </model>

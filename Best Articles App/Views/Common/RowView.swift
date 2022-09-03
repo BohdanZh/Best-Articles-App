@@ -16,6 +16,7 @@ struct RowView: View {
         VStack (alignment: .leading) {
             HStack {
                 
+                // Image
                 ZStack (alignment: .center){
                     
                     Rectangle()
@@ -32,6 +33,8 @@ struct RowView: View {
                         Image("apiLable")
                     }
                 }
+                
+                // Title, category and date
                 VStack (alignment: .leading) {
                     Text(article.title ?? "")
                         .bold()
@@ -45,10 +48,8 @@ struct RowView: View {
                     }
                     .font(.caption)
                 }
-                
             }
             Divider()
         }
-        
     }
 }

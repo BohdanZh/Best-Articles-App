@@ -53,7 +53,7 @@ struct ContentView: View {
                 .tag(Constants.viewedTab)
             
             // Saved articles
-            SavedView()
+            SavedView(selectedTab: $selectedTab)
                 .tabItem {
                     VStack{
                         Image(systemName: "bookmark.circle.fill")

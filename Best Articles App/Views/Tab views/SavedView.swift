@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct SavedView: View {
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "title", ascending: true)]) private var articles: FetchedResults<ArticleSaved>
+    
+    @Binding var selectedTab:Int
+    
     var body: some View {
         NavigationView{
             VStack (alignment: .leading){
@@ -16,13 +22,48 @@ struct SavedView: View {
 
                 ScrollView{
                     LazyVStack (spacing: 10) {
-//                        ForEach(model.emailedArticles) { a in
-//                            NavigationLink {
-//
-//                            } label: {
-//                                RowView(article: a)
-//                            }
-//                        }
+                        ForEach(articles) { a in
+                            NavigationLink {
+                                SavedArticleDetails(article: a, selectedTab: $selectedTab)
+                            } label: {
+                                VStack (alignment: .leading) {
+                                    HStack {
+                                        
+                                        // Image
+                                        ZStack (alignment: .center){
+                                            
+                                            Rectangle()
+                                                .frame(width: 80, height: 80)
+                                                .foregroundColor(.black)
+                                            
+                                            
+                                            if a.imageData != nil {
+                                                let uiImage = UIImage(data: a.imageData!)
+                                                Image(uiImage: uiImage ?? UIImage(imageLiteralResourceName: "apiLable"))
+                                            } else {
+                                                Image("apiLable")
+                                            }
+                                        }
+                                        
+                                        // Title, category and date
+                                        VStack (alignment: .leading) {
+                                            Text(a.title ?? "")
+                                                .bold()
+                                                .font(.title3)
+                                                .multilineTextAlignment(.leading)
+                                            Spacer()
+                                            HStack(alignment: .top) {
+                                                Text("Category: \(a.section ?? "")")
+                                                Spacer()
+                                                Text(a.publishedDate ?? "")
+                                            }
+                                            .font(.caption)
+                                        }
+                                    }
+                                    Divider()
+                                }
+                            }
+                        }
                     }
                     .padding(.horizontal)
                 }
