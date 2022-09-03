@@ -39,9 +39,9 @@ struct SavedView: View {
                                             
                                             if a.imageData != nil {
                                                 let uiImage = UIImage(data: a.imageData!)
-                                                Image(uiImage: uiImage ?? UIImage(imageLiteralResourceName: "apiLable"))
+                                                Image(uiImage: uiImage ?? UIImage(imageLiteralResourceName: "apiLableLogo"))
                                             } else {
-                                                Image("apiLable")
+                                                Image("apiLableLogo")
                                             }
                                         }
                                         

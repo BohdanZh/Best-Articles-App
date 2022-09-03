@@ -24,7 +24,7 @@ struct TabTitle: View {
             
             // NYT API Attribution
             Link(destination: Constants.labelUrl!){
-                Image("apiLable")
+                Image("apiLableLogo")
             }
         }
     }
