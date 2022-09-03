@@ -18,9 +18,13 @@ struct ArticleBotton: View {
                 .frame(width: 175, height: 25)
                 .foregroundColor(.black)
                 .cornerRadius(5)
+            Rectangle()
+                .frame(width: 173, height: 23)
+                .foregroundColor(.white)
+                .cornerRadius(5)
             Text(buttonText)
                 .bold()
-                .tint(.white)
+                .tint(.black)
         }
     }
 }
