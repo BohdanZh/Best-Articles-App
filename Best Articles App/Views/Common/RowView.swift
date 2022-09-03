@@ -26,10 +26,10 @@ struct RowView: View {
                     if article.media != nil && article.media?.count != 0 {
                         if article.media![0].mediaMetadata != nil && article.media![0].mediaMetadata?.count != 0 {
                             let uiImage = UIImage(data: article.media![0].mediaMetadata![0].imageData ?? Data())
-                            Image(uiImage: uiImage ?? UIImage(imageLiteralResourceName: "APILable"))
+                            Image(uiImage: uiImage ?? UIImage(imageLiteralResourceName: "apiLable"))
                         }
                     } else {
-                        Image("APILable")
+                        Image("apiLable")
                     }
                 }
                 VStack (alignment: .leading) {

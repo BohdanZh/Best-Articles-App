@@ -30,6 +30,7 @@ struct Constants {
     static var emaildTab = 0
     static var sharedTab = 1
     static var viewedTab = 2
+    static var savedTab = 3
     
     // API branding
     static var labelUrl = URL(string: "https://developer.nytimes.com")

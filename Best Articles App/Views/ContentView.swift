@@ -12,7 +12,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var model: ContentModel
     
-    @State var selectedTab = Constants.emaildKey
+    @State var selectedTab = Constants.emaildTab
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
@@ -21,7 +21,9 @@ struct ContentView: View {
 
     var body: some View {
         TabView (selection: $selectedTab) {
-            EmailedView()
+            
+            // Most emailed
+            ArticlesListView(selectedTab: $selectedTab, articles: $model.emailedArticles)
                 .tabItem {
                     VStack{
                         Image(systemName: "tray.fill")
@@ -29,7 +31,9 @@ struct ContentView: View {
                     }
                 }
                 .tag(Constants.emaildTab)
-            SharedView()
+            
+            // Most shared
+            ArticlesListView(selectedTab: $selectedTab, articles: $model.sharedArticles)
                 .tabItem {
                     VStack{
                         Image(systemName: "square.and.arrow.up.on.square.fill")
@@ -37,7 +41,9 @@ struct ContentView: View {
                     }
                 }
                 .tag(Constants.sharedTab)
-            ViewedView()
+            
+            // Most viewed
+            ArticlesListView(selectedTab: $selectedTab, articles: $model.viewedArticles)
                 .tabItem {
                     VStack{
                         Image(systemName: "eye")
@@ -45,6 +51,8 @@ struct ContentView: View {
                     }
                 }
                 .tag(Constants.viewedTab)
+            
+            // Saved articles
             SavedView()
                 .tabItem {
                     VStack{
@@ -52,7 +60,7 @@ struct ContentView: View {
                         Text("Saved")
                     }
                 }
-                .tag(Constants.viewedTab)
+                .tag(Constants.savedTab)
         }
         .accentColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
     }

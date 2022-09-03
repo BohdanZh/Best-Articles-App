@@ -11,6 +11,8 @@ struct SharedView: View {
     
     @EnvironmentObject var model: ContentModel
     
+    @Binding var selectedTab:Int
+    
     var body: some View {
         NavigationView{
             VStack (alignment: .leading){
@@ -21,7 +23,7 @@ struct SharedView: View {
                     LazyVStack (spacing: 10) {
                         ForEach(model.sharedArticles) { a in
                             NavigationLink {
-                                
+                                ArticleDetail(article: a, selectedTab: $selectedTab)
                             } label: {
                                 RowView(article: a)
                             }
