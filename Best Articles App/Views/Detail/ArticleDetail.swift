@@ -10,10 +10,14 @@ import SwiftUI
 struct ArticleDetail: View {
     
     @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "title", ascending: true)]) private var articles: FetchedResults<ArticleSaved>
     @EnvironmentObject var model: ContentModel
     
     var article: Article
+    
     @Binding var selectedTab:Int
+    
+    @State var articleSaved = false
     
     var body: some View {
         VStack (alignment: .leading){
@@ -71,14 +75,15 @@ struct ArticleDetail: View {
                                 }
                             }
                             
-                            // Delete button
-                            Button {
-                                selectedTab = Constants.savedTab
-                                model.saveArticle(article: article)
-                            } label: {
-                                ArticleBotton(buttonText: "Read later")
+                            if articleSaved != true {
+                                // Delete button
+                                Button {
+                                    selectedTab = Constants.savedTab
+                                    model.saveArticle(article: article)
+                                } label: {
+                                    ArticleBotton(buttonText: "Read later")
+                                }
                             }
-
                             
                         }
                         .padding(.horizontal)
@@ -86,5 +91,20 @@ struct ArticleDetail: View {
                 }
             .navigationBarTitleDisplayMode(.inline)
         }
+        .onAppear {
+            articleSaved = isArticleSaved(artilcle: article, savedArticles: articles)
+        }
     }
+    
+    func isArticleSaved(artilcle: Article, savedArticles: FetchedResults<ArticleSaved>) -> Bool {
+        
+        // Create a set of saved articles' uri
+        
+        let uriSet = Set(savedArticles.map { a in
+            a.uri
+        })
+        
+        return uriSet.contains(artilcle.uri)
+    }
+    
 }
