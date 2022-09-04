@@ -15,7 +15,6 @@ struct ContentView: View {
     @State var selectedTab = Constants.savedTab
 
     var body: some View {
-        if model.emailedArticles.count != 0 {
             TabView (selection: $selectedTab) {
                 
                 // Most emailed
@@ -59,9 +58,5 @@ struct ContentView: View {
                     .tag(Constants.savedTab)
             }
             .accentColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
-        }
-        else {
-            ProgressView()
-        }
     }
 }
